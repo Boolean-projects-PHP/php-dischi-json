@@ -25,16 +25,16 @@
 }
 
 .logo{
-   
     width: 150px;
 }
 
 .card{
     background-color: #090a16;
     color: white;
-    transition: transform 0.2s;
+    /* transition: transform 0.2s; */
 }
 
-.card:hover{
+/* .card:hover{
     transform: scale(1.1);
-} 
+}  */
+

@@ -22,13 +22,48 @@
         <div id="container" class="container_main">
 
             <div 
-            v-for="index in arrayMusic" :key="index"  
+            v-for="(element, index) in arrayMusic" :key="index"  
             class=" card d-flex flex-column text-center mx-4 my-4 py-3 rounded-3"
             >
-                <div style="width: 400px; height: 400px;"><img :src="index.image" alt="" class="img-fluid p-4" style="width:100%; height: 100%;"></div>
-                <span class="py-1" style="font-weight: 800;">{{index.name}}</span>
-                <span class="py-1">{{index.artist}}</span>
-                <span class="py-1" style="font-weight: 700;">{{index.date}}</span>
+                <div 
+                style="width: 400px; height: 400px;"
+                data-bs-toggle="modal" 
+                :data-bs-target="'#exampleModal' + index"
+                >
+                    <img :src="element.image" alt="" class="img-fluid p-4" style="width:100%; height: 100%;">
+                </div>
+                <span class="py-1" style="font-weight: 800;">{{element.name}}</span>
+                <span class="py-1">{{element.artist}}</span>
+                <span class="py-1" style="font-weight: 700;">{{element.date}}</span>
+                
+                <!-- Modal -->
+                <div class="modal fade" 
+                :id="'exampleModal' + index" 
+                tabindex="-1" 
+                :aria-labelledby="'exampleModalLabel' + index" 
+                aria-hidden="true"
+                >
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-header" style="background-color: #1a1c2b;">
+                            <h5 class="modal-title">Informazioni Brano</h5>
+                            <button type="button" class="btn-close"  style="background-color:white"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div 
+                        class="modal-content 
+                        d-flex justify-content-center 
+                        align-items-center"
+                        style="background-color: #1a1c2b; opacity: 0.9;"  
+                        >
+                            <div>
+                                <img :src="element.image" alt="" class="img-fluid p-4" style="width:400px; ">
+                            </div>
+                            <div class="py-1" style="font-weight: 800;">{{element.name}}</div>
+                            <div class="py-1">{{element.artist}}</div>
+                            <div class="py-1" style="font-weight: 700;">{{element.date}}</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
