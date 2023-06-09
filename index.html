@@ -11,15 +11,29 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="get">
-        <div id="container" class="container">
-            <div v-for="index in arrayMusic" :key="index" style="width: 150px; height: 150px;" class="px-2">
-                <div><img :src="index.image" alt="" class="img-fluid" style="width:150px; height:150px;"></div>
-                <p>{{index.name}}</p>
-                <p>{{index.artist}}</p>
-                <p>{{index.date}}</p>
-            </div>
+    <header class="" style="height: 5rem; background-color: #090a16;">
+        <div class="container_header">
+            <div class="logo"><img src="./img/logo.svg" alt="" class="img-fluid"></div>
         </div>
+    </header>
+    <form action="" method="get"  class="py-5" style="background-color: #1a1c2b;">
+        
+
+        <div id="container" class="container_main">
+
+            <div 
+            v-for="index in arrayMusic" :key="index"  
+            class=" card d-flex flex-column text-center mx-4 my-4 py-3 rounded-3"
+            >
+                <div style="width: 400px; height: 400px;"><img :src="index.image" alt="" class="img-fluid p-4" style="width:100%; height: 100%;"></div>
+                <span class="py-1" style="font-weight: 800;">{{index.name}}</span>
+                <span class="py-1">{{index.artist}}</span>
+                <span class="py-1" style="font-weight: 700;">{{index.date}}</span>
+            </div>
+
+
+        </div>
+
     </form>
     
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

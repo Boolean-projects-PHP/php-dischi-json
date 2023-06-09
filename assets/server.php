@@ -49,7 +49,13 @@ $arrayMusic = [
 
 header('content-type: application/json');
 echo $arrayMusic;
+
+/*Serve per creare l'array prima del file json*/
+
 /*echo json_encode($arrayMusic);*/
+
+
+/*Serve per creare il file json
 
 /*$json_string = json_encode($arrayMusic);
 file_put_contents('arrayMusics.json', $json_string);*/
